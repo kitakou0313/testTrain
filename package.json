@@ -1,0 +1,29 @@
+{
+  "name": "testtrain",
+  "version": "1.0.0",
+  "description": "A repo for training test",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitakou0313/testTrain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kitakou0313/testTrain/issues"
+  },
+  "homepage": "https://github.com/kitakou0313/testTrain#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "@vitest/ui": "^3.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
