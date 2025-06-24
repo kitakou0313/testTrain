@@ -14,7 +14,19 @@
 - 空配列 -> 例外(`Error("Array cannot be empty")`)
 
 ## findMin
+- 要素が0個の配列
+- 要素が1つ以上
+    - 要素が1つ
+    - 要素が2つ以上
+        - 最小値が1つのみ
+        - 最小値が1つ以上
+
 
 ## average
 
-## 
+# Test時に考慮すべき値
+- null, undefiend
+- 0を表す値
+    - 空配列
+
+- 要素
