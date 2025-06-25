@@ -55,5 +55,23 @@ describe('ArrayUtils', () => {
         ])).toBe(1)
       } )
     })
+  }),
+
+  describe('average', () => {
+    describe('要素が0の配列', () => {
+      it('要素が0の配列', () => {
+        expect(() => {
+          ArrayUtils.average([])
+        }).toThrow('Array cannot be empty')
+      })
+    }),
+    describe('要素が1つ以上の配列', () => {
+      it('要素が1つの配列', () => {
+        expect(ArrayUtils.average([5])).toBe(5)
+      }),
+      it('要素が複数の配列', () => {
+        expect(ArrayUtils.average([1,2,5,4,3])).toBe(3)
+      })
+    })
   })
 });
