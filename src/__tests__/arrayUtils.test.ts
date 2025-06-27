@@ -73,5 +73,26 @@ describe('ArrayUtils', () => {
         expect(ArrayUtils.average([1,2,5,4,3])).toBe(3)
       })
     })
-  })
+  }),
+
+  describe('removeDuplicates', () => {
+    describe('要素が0個の配列', () => {
+      it('要素が0個の配列', () => {
+        expect(ArrayUtils.removeDuplicates([])).toStrictEqual([])
+      })
+    });
+    describe('要素が1つ以上の配列',() => {
+      it('要素が1つの配列', () => {
+        expect(ArrayUtils.removeDuplicates([5])).toStrictEqual([5])
+      })
+      describe('要素が2つ以上の配列', () => {
+        it('重複がない配列', () => {
+          expect(ArrayUtils.removeDuplicates([1,2,3,4,5])).toStrictEqual([1,2,3,4,5])
+        });
+        it('重複がある配列', () => {
+          expect(ArrayUtils.removeDuplicates([1,2,2,3,4,4,5])).toStrictEqual([1,2,3,4,5])
+        })
+      })
+    });
+  });
 });
