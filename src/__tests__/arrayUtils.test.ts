@@ -95,4 +95,17 @@ describe('ArrayUtils', () => {
       })
     });
   });
+
+  describe('chunk', () => {
+    it('sizeが0未満', () => {
+      expect(() => {
+        ArrayUtils.chunk([1,2,3], -1)
+      }).toThrow('Chunk size must be positive')
+    });
+    it('sizeが0', () => {
+      expect(() => {
+        ArrayUtils.chunk([1,2,3], 0)
+      }).toThrow('Chunk size must be positive')
+    })
+  });
 });
