@@ -125,4 +125,33 @@ describe('ArrayUtils', () => {
       })
     })
   });
+
+  describe('flatten', () => {
+    it('空配列', () => {
+      expect(ArrayUtils.flatten([])).toStrictEqual([])
+    });
+    
+    describe('空配列でない', () => {
+      it('ネストの最大値が0', () => {
+        expect(ArrayUtils.flatten([1,2,3])).toStrictEqual([1,2,3])
+      });
+
+      describe('ネストの最大値が0でない', () => {
+        describe('ネストが1', () => {
+          it('最深部の配列の要素数が同じ', () => {
+            expect(ArrayUtils.flatten([[1,2], [3, 4]])).toStrictEqual(
+            [1,2,3,4]
+            )
+          });
+
+          it('最深部の配列の要素数が同じ', () => {
+            expect(ArrayUtils.flatten([[1,2, 3],[4]])).toStrictEqual(
+            [1,2,3,4]
+            )
+          })
+        })
+      })
+    })
+
+  })
 });
