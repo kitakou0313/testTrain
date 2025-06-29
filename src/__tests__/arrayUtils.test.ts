@@ -107,5 +107,17 @@ describe('ArrayUtils', () => {
         ArrayUtils.chunk([1,2,3], 0)
       }).toThrow('Chunk size must be positive')
     })
+    describe('sizeが1以上', () => {
+      it('空配列', () => {
+        expect(ArrayUtils.chunk([], 3)).toStrictEqual([])
+      });
+      describe('空配列でない', () => {
+        it('要素数がsizeの倍数の配列', () => {
+          expect(ArrayUtils.chunk([1,2,3,4], 2)).toStrictEqual(
+            [[1,2], [3,4]]
+          )
+        })
+      })
+    })
   });
 });
