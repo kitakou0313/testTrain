@@ -116,6 +116,11 @@ describe('ArrayUtils', () => {
           expect(ArrayUtils.chunk([1,2,3,4], 2)).toStrictEqual(
             [[1,2], [3,4]]
           )
+        });
+        it('要素数がsizeの倍数ではない', () => {
+          expect(ArrayUtils.chunk([1,2,3,4,5], 2)).toStrictEqual(
+            [[1,2], [3,4], [5]]
+          )
         })
       })
     })
