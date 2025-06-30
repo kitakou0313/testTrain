@@ -144,7 +144,7 @@ describe('ArrayUtils', () => {
             )
           });
 
-          it('最深部の配列の要素数が同じ', () => {
+          it('最深部の配列の要素数が異なる', () => {
             expect(ArrayUtils.flatten([[1,2, 3],[4]])).toStrictEqual(
             [1,2,3,4]
             )
