@@ -137,7 +137,7 @@ describe('ArrayUtils', () => {
       });
 
       describe('ネストの最大値が0でない', () => {
-        describe('ネストが1', () => {
+        describe('ネストの最大値が1', () => {
           it('最深部の配列の要素数が同じ', () => {
             expect(ArrayUtils.flatten([[1,2], [3, 4]])).toStrictEqual(
             [1,2,3,4]
