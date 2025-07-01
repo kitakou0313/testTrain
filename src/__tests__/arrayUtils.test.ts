@@ -154,4 +154,16 @@ describe('ArrayUtils', () => {
     })
 
   })
+
+  describe('sortByProperty', () => {
+    describe('ascendingがtrue（昇順ソート）', () => {
+      it('ソートに使用するプロパティを一部オブジェクトが持たない', () => {
+        expect(() => {
+          ArrayUtils.sortByProperty([{a: 1}, {b: 2}], 'a');
+        }).toThrow('Property "a" does not exist on some objects');
+      })
+    });
+    describe('ascendeingがfalse（降順ソート）');
+
+  })
 });
