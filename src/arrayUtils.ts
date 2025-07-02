@@ -48,7 +48,11 @@ export class ArrayUtils {
     return result;
   }
 
-  static sortByProperty<T>(arr: T[], property: keyof T, ascending: boolean = true): T[] {
+  static sortByProperty<T>(
+    arr: T[],
+    property: keyof T,
+    ascending: boolean = true
+  ): T[] {
     return [...arr].sort((a, b) => {
       const aVal = a[property];
       const bVal = b[property];

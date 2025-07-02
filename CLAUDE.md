@@ -1,9 +1,11 @@
 # Claude Code Memory
 
 ## Project Overview
+
 This is a TypeScript-based black-box testing training environment. The project contains utility classes and their specifications to practice various black-box testing techniques.
 
 ## Project Structure
+
 ```
 /workspaces/testTrain/
 ├── src/
@@ -25,6 +27,7 @@ This is a TypeScript-based black-box testing training environment. The project c
 ## Available Classes and Methods
 
 ### Calculator Class
+
 - `add(a, b)` - Addition
 - `subtract(a, b)` - Subtraction
 - `multiply(a, b)` - Multiplication
@@ -33,6 +36,7 @@ This is a TypeScript-based black-box testing training environment. The project c
 - `factorial(n)` - Factorial calculation (throws error on negative numbers)
 
 ### ArrayUtils Class
+
 - `findMax(arr)` - Find maximum value in array
 - `findMin(arr)` - Find minimum value in array
 - `average(arr)` - Calculate average of array elements
@@ -42,6 +46,7 @@ This is a TypeScript-based black-box testing training environment. The project c
 - `sortByProperty(arr, property, ascending)` - Sort object arrays by property
 
 ### DateUtils Class
+
 - `formatDate(date, format)` - Format date with YYYY/MM/DD patterns
 - `addDays(date, days)` - Add/subtract days from date
 - `daysBetween(date1, date2)` - Calculate days between dates
@@ -51,6 +56,7 @@ This is a TypeScript-based black-box testing training environment. The project c
 - `getAge(birthDate, currentDate)` - Calculate age
 
 ### StringUtils Class
+
 - `reverse(str)` - Reverse string
 - `isPalindrome(str)` - Check if string is palindrome
 - `capitalize(str)` - Capitalize first letter
@@ -59,16 +65,19 @@ This is a TypeScript-based black-box testing training environment. The project c
 - `extractNumbers(str)` - Extract numbers from string
 
 ## Testing Framework
+
 - **Framework**: Vitest
 - **Test Location**: `src/__tests__/`
 - **Configuration**: `vitest.config.ts`
 
 ## NPM Scripts
+
 - `npm test` - Run tests
 - `npm run test:ui` - Run tests with UI
 - `npm run test:coverage` - Run tests with coverage report
 
 ## Black-Box Testing Techniques
+
 This project is designed to practice:
 
 1. **Equivalence Partitioning**: Valid/invalid input classes
@@ -77,12 +86,14 @@ This project is designed to practice:
 4. **Decision Table Testing**: Complex logic combinations
 
 ## Testing Guidelines
+
 - Use specification documents instead of source code for test design
 - Focus on input/output behavior without knowing implementation
 - Cover normal cases, boundary cases, and error cases
 - Test both positive and negative scenarios
 
 ## Development Commands
+
 ```bash
 # Install dependencies
 npm install
@@ -101,6 +112,7 @@ npx tsc
 ```
 
 ## Notes
+
 - All utility classes use static methods
 - Error handling is implemented where specified in documentation
 - Generic types are used for reusable array operations

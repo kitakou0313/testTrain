@@ -3,7 +3,7 @@ export class DateUtils {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const day = String(date.getDate()).padStart(2, '0');
-    
+
     return format
       .replace('YYYY', year.toString())
       .replace('MM', month)
@@ -34,21 +34,24 @@ export class DateUtils {
     if (year < 1) {
       throw new Error('Year must be positive');
     }
-    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
   }
 
   static getAge(birthDate: Date, currentDate: Date = new Date()): number {
     if (birthDate > currentDate) {
       throw new Error('Birth date cannot be in the future');
     }
-    
+
     let age = currentDate.getFullYear() - birthDate.getFullYear();
     const monthDiff = currentDate.getMonth() - birthDate.getMonth();
-    
-    if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < birthDate.getDate())) {
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && currentDate.getDate() < birthDate.getDate())
+    ) {
       age--;
     }
-    
+
     return age;
   }
 }

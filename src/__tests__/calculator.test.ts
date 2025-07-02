@@ -66,7 +66,9 @@ describe('Calculator', () => {
     });
 
     it('should throw error when dividing by zero', () => {
-      expect(() => calculator.divide(5, 0)).toThrow('Division by zero is not allowed');
+      expect(() => calculator.divide(5, 0)).toThrow(
+        'Division by zero is not allowed'
+      );
     });
 
     it('should handle negative numbers', () => {
@@ -91,7 +93,9 @@ describe('Calculator', () => {
     });
 
     it('should throw error for negative exponents', () => {
-      expect(() => calculator.power(2, -1)).toThrow('Negative exponents are not supported');
+      expect(() => calculator.power(2, -1)).toThrow(
+        'Negative exponents are not supported'
+      );
     });
   });
 
@@ -103,7 +107,9 @@ describe('Calculator', () => {
     });
 
     it('should throw error for negative numbers', () => {
-      expect(() => calculator.factorial(-1)).toThrow('Factorial of negative numbers is not defined');
+      expect(() => calculator.factorial(-1)).toThrow(
+        'Factorial of negative numbers is not defined'
+      );
     });
 
     it('should handle large numbers', () => {
