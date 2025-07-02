@@ -157,13 +157,26 @@ describe('ArrayUtils', () => {
 
   describe('sortByProperty', () => {
     describe('ascendingがtrue（昇順ソート）', () => {
-      it('ソートに使用するプロパティを一部オブジェクトが持たない', () => {
-        expect(() => {
-          ArrayUtils.sortByProperty([{a: 1}, {b: 2}], 'a');
-        }).toThrow('Property "a" does not exist on some objects');
+      it('配列の要素が0', () => {
+        expect(ArrayUtils.sortByProperty([], 'a')).toStrictEqual([])
       })
+
+      describe('配列の要素が1つ以上', () => {
+        it('ソートに使用するプロパティを一部オブジェクトが持たない', () => {
+          expect(() => {
+            ArrayUtils.sortByProperty([{a: 1}, {b: 2}], 'a');
+          }).toThrow('Property "a" does not exist on some objects');
+        });
+
+        describe('ソートに使用するプロパティを全オブジェクトが持つ', () => {
+          it('ソートに使用するプロパティの型が比較可能である', () => {
+            expect(ArrayUtils.sortByProperty([{a: 3}, {a: 1}, {a:10}], "a")).toStrictEqual(
+              [{a: 1}, {a: 3}, {a: 10}]
+            )
+          })
+        })
+      });
     });
     describe('ascendeingがfalse（降順ソート）');
-
   })
 });
