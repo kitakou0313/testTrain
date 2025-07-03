@@ -34,28 +34,28 @@ describe('ArrayUtils', () => {
         expect(() => {
           ArrayUtils.findMin([])
         }).toThrow('Array cannot be empty')
-      })
-    }),
+      });
+    });
 
     describe('要素が1つ以上の配列', () => {
       it('要素が1つの配列', () => {
         expect(ArrayUtils.findMin([5])).toBe(5)
-      })
-    }),
+      });
+    });
 
     describe('要素が複数の配列', () => {
       it('最小値が1つのみ含まれる', () => {
         expect(ArrayUtils.findMin([
           5.6,3,1,2
         ])).toBe(1)
-      }),
+      });
       it('最小値が複数含まれる', () => {
         expect(ArrayUtils.findMin([
           1,5,3,1,2
         ])).toBe(1)
-      } )
-    })
-  }),
+      });
+    });
+  });
 
   describe('average', () => {
     describe('要素が0の配列', () => {
@@ -64,16 +64,16 @@ describe('ArrayUtils', () => {
           ArrayUtils.average([])
         }).toThrow('Array cannot be empty')
       })
-    }),
+    });
     describe('要素が1つ以上の配列', () => {
       it('要素が1つの配列', () => {
         expect(ArrayUtils.average([5])).toBe(5)
-      }),
+      });
       it('要素が複数の配列', () => {
         expect(ArrayUtils.average([1,2,5,4,3])).toBe(3)
-      })
-    })
-  }),
+      });
+    });
+  });
 
   describe('removeDuplicates', () => {
     describe('要素が0個の配列', () => {
