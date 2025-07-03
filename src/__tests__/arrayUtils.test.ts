@@ -173,6 +173,15 @@ describe('ArrayUtils', () => {
             expect(ArrayUtils.sortByProperty([{a: 3}, {a: 1}, {a:10}], "a")).toStrictEqual(
               [{a: 1}, {a: 3}, {a: 10}]
             )
+          });
+          it('ソートに使用するプロパティの型が順序関係を定義できない', () => {
+            expect(() => {
+              ArrayUtils.sortByProperty(
+                [{a: Symbol('a')}, {a: Symbol('b')}, {a: Symbol('c')}],
+                'a',
+                true
+              )
+            })
           })
         })
       });
