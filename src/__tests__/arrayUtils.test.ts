@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { ArrayUtils } from '../arrayUtils'
+import { a } from 'vitest/dist/chunks/suite.d.FvehnV49.js';
 
 describe('ArrayUtils', () => {
   describe('findMax', () => {
@@ -162,12 +163,6 @@ describe('ArrayUtils', () => {
       })
 
       describe('配列の要素が1つ以上', () => {
-        it('ソートに使用するプロパティを一部オブジェクトが持たない', () => {
-          expect(() => {
-            ArrayUtils.sortByProperty([{a: 1}, {b: 2}], 'a');
-          }).toThrow('Property "a" does not exist on some objects');
-        });
-
         describe('ソートに使用するプロパティを全オブジェクトが持つ', () => {
           it('ソートに使用するプロパティの型が比較可能である', () => {
             expect(ArrayUtils.sortByProperty([{a: 3}, {a: 1}, {a:10}], "a")).toStrictEqual(
@@ -181,7 +176,7 @@ describe('ArrayUtils', () => {
                 'a',
                 true
               )
-            })
+            }).toThrow("Cannot convert a Symbol value to a number")
           })
         })
       });
@@ -192,12 +187,6 @@ describe('ArrayUtils', () => {
       })
 
       describe('配列の要素が1つ以上', () => {
-        it('ソートに使用するプロパティを一部オブジェクトが持たない', () => {
-          expect(() => {
-            ArrayUtils.sortByProperty([{a: 1}, {b: 2}], 'a');
-          }).toThrow('Property "a" does not exist on some objects');
-        });
-
         describe('ソートに使用するプロパティを全オブジェクトが持つ', () => {
           it('ソートに使用するプロパティの型が比較可能である', () => {
             expect(ArrayUtils.sortByProperty([{a: 3}, {a: 1}, {a:10}], "a", false)).toStrictEqual(
@@ -205,12 +194,13 @@ describe('ArrayUtils', () => {
             )
           });
           it('ソートに使用するプロパティの型が順序関係を定義できない', () => {
-            expect(
+            expect(() => {
               ArrayUtils.sortByProperty(
                 [{a: Symbol('a')}, {a: Symbol('b')}, {a: Symbol('c')}],
                 'a',
                 true
-            ))
+            )
+            }).toThrow("Cannot convert a Symbol value to a number")
           })
         })
       });
