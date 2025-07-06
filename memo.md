@@ -78,6 +78,15 @@
     - ソートに使用するプロパティを一部オブジェクトが持たない
 - ascendeingがfalse（降順ソート）
 
+# StringsUtils
+
+## reverse(str: string): string
+- strがnull -> コンパイル時に検出される
+- strがundefined -> コンパイル時に検出される
+- strが""
+- strが1の長さ
+- strが2以上の長さ
+
 # Test時に考慮すべき値
 
 - null, undefiend
