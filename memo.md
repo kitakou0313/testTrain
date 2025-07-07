@@ -81,18 +81,38 @@
 # StringsUtils
 
 ## reverse(str: string): string
-- strがnull -> コンパイル時に検出される
-- strがundefined -> コンパイル時に検出される
+- strがnull -> コンパイル時に型検査で検出される
+- strがundefined -> コンパイル時に型検査で検出される
 - strが""
 - strが1の長さ
 - strが2以上の長さ
+
+## isPalindrome(str: string): boolean
+- strがnull  -> コンパイル時に型検査で検出される
+- strがundefined  -> コンパイル時に型検査で検出される
+- strが空文字列
+- strが1の長さ
+- strが2以上の長さ
+  - 長さが奇数
+    - 回文である
+    - 回文でない
+  - 長さが偶数
+    - 回文である
+    - 回文でない
 
 # Test時に考慮すべき値
 
 - null, undefiend
 - 0を表す値
   - 空配列
+  - 空文字列
 
 - 各要素
-  - 意図した型
-  - 意図していない型（静的型付き言語なら起きえない）
+  - 値の型の視点
+    - 意図した型
+    - 意図していない型（静的型付き言語なら起きえない）
+  - 値
+    - 英字
+    - 数字
+    - 記号
+      - 特殊文字

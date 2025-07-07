@@ -18,5 +18,28 @@ describe('StringUtils', () => {
     // it('strがundefined', () => {
     //   expect(StringUtils.reverse(undefined))
     // })
+  });
+
+  describe('isPalindrome', () => {
+    // it('stgがnull', () => {
+    //   expect(StringUtils.reverse(null))
+    // })
+    // it('strがundefined', () => {
+    //   expect(StringUtils.reverse(undefined))
+    // })
+
+    it('strが空文字', () => {
+      expect(StringUtils.isPalindrome('')).toBe(
+        true
+      )
+    });
+
+    it('strが1の長さ', () => {
+      expect(StringUtils.isPalindrome('a')).toBe(true)
+    });
+
+    describe('strが2以上の長さ', () => {
+      
+    })
   })
 })
