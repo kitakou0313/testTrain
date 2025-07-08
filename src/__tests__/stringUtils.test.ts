@@ -39,7 +39,20 @@ describe('StringUtils', () => {
     });
 
     describe('strが2以上の長さ', () => {
-      
+      describe('長さが奇数', () => {
+        describe('回文である', () => {
+          it('大文字小文字区別なしで回文', () => {
+            expect(StringUtils.isPalindrome('Heleh')).toBe(true)
+          })
+
+          it('大文字小文字区別ありでも回文', () => {
+            expect(StringUtils.isPalindrome('HEAEH')).toBe(true)
+          })
+        });
+      });  
+      describe('長さが奇数', () => {
+
+      });
     })
   })
 })
