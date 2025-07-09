@@ -69,4 +69,16 @@ describe('StringUtils', () => {
       });
     })
   })
+
+  describe('captalize', () => {
+    // it('strがnull', () => {
+    //   expect(StringUtils.capitalize(null))
+    // });
+    // it('strがundefined', () => {
+    //   expect(StringUtils.capitalize(undefined))
+    // })
+    it('strが空文字列', () => {
+      expect(StringUtils.capitalize('')).toBe('')
+    })
+  })
 })
