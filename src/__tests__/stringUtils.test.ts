@@ -83,8 +83,13 @@ describe('StringUtils', () => {
 
     describe('strが1以上の長さ', () => {
       describe('長さが1', () => {
-        it('先頭の文字が英字', () => {
-          expect(StringUtils.capitalize('a')).toBe('A'); 
+        describe('先頭の文字が英字', () => {
+          it('先頭の文字が大文字', () => {
+            expect(StringUtils.capitalize('A')).toBe('A')
+          })
+          it('先頭の文字が小文字', () => {
+            expect(StringUtils.capitalize('a')).toBe('A');
+          })
         });
 
         it('先頭が英字ではない', () => {
@@ -95,9 +100,12 @@ describe('StringUtils', () => {
 
       describe('長さが2以上', () => {
         describe('先頭の文字が英字', () => {
-          it('先頭の文字が英字', () => {
+          it('先頭の文字が大文字', () => {
+            expect(StringUtils.capitalize('Abc')).toBe('Abc')
+          });
+          it('先頭の文字が小文字', () => {
             expect(StringUtils.capitalize('abc')).toBe('Abc')
-          })
+          });
         });
         describe('先頭の文字が英字ではない', () => {
           it('先頭の文字が英字ではない', () => {
