@@ -79,6 +79,32 @@ describe('StringUtils', () => {
     // })
     it('strが空文字列', () => {
       expect(StringUtils.capitalize('')).toBe('')
+    });
+
+    describe('strが1以上の長さ', () => {
+      describe('長さが1', () => {
+        it('先頭の文字が英字', () => {
+          expect(StringUtils.capitalize('a')).toBe('A'); 
+        });
+
+        it('先頭が英字ではない', () => {
+          expect(StringUtils.capitalize('1')).toBe('1');
+          expect(StringUtils.capitalize('@')).toBe('@');
+        })
+      });
+
+      describe('長さが2以上', () => {
+        describe('先頭の文字が英字', () => {
+          it('先頭の文字が英字', () => {
+            expect(StringUtils.capitalize('abc')).toBe('Abc')
+          })
+        });
+        describe('先頭の文字が英字ではない', () => {
+          it('先頭の文字が英字ではない', () => {
+            expect(StringUtils.capitalize('1bc')).toBe('1bc')
+          })
+        });
+      });
     })
   })
 })
