@@ -110,6 +110,7 @@ describe('StringUtils', () => {
         describe('先頭の文字が英字ではない', () => {
           it('先頭の文字が英字ではない', () => {
             expect(StringUtils.capitalize('1bc')).toBe('1bc')
+            expect(StringUtils.capitalize('@bc')).toBe('@bc')
           })
         });
       });
