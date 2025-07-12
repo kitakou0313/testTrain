@@ -115,5 +115,17 @@ describe('StringUtils', () => {
         });
       });
     })
+  });
+
+  describe('countWords', () => {
+    // it('strがnull', () => {
+    //   expect(StringUtils.countWords(null))
+    // });
+    // it('strがundefined', () => {
+    //   expect(StringUtils.countWords(undefined))
+    // })
+    it('strが空文字列', () => {
+      expect(StringUtils.countWords('')).toBe(0)
+    })
   })
 })

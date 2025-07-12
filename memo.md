@@ -102,7 +102,7 @@
     - 回文である
     - 回文でない
 
-# capitalize(str: string): string
+## capitalize(str: string): string
 - strがnull -> コンパイル時に検出される
 - strがundefined -> コンパイル時に検出される
 - strが空文字列 -> 空文字列が返る
@@ -117,6 +117,12 @@
       - 先頭の文字が大文字
       - 先頭の文字が小文字
     - 先頭の文字が英字ではない
+
+## countWords(str: string): number
+- strがnull -> コンパイル時に検出される
+- strがundefined -> コンパイル時に検出される
+- strが空文字列 -> 0が返る
+- strが長さ1以上
 
 # Test時に考慮すべき値
 
