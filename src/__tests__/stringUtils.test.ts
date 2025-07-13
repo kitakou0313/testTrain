@@ -156,4 +156,26 @@ describe('StringUtils', () => {
       })
     })
   })
+
+  describe('truncate', () => {
+    // it('strがnull', () => {
+    //   expect(StringUtils.truncate(null, 0))
+    // })
+    // it('strがundefined', () => {
+    //   expect(StringUtils.truncate(undefined, 0))
+    // })
+    describe('strが空文字列', () => {
+      it('maxLengthが < 0', () => {
+        expect(() => {
+          StringUtils.truncate('', -1)
+        }).toThrow('Maximum length cannot be negative')
+      });
+      it('maxLength = 0', () => {
+        expect(StringUtils.truncate('', 0)).toBe('')
+      });
+      it('maxLengthが > 0', () => {
+        expect(StringUtils.truncate('', 1)).toBe('')
+      })
+    })
+  })
 })

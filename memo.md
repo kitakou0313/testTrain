@@ -132,6 +132,19 @@
       - 空白が全角
       - 空白が半角
 
+## truncate(str: string, maxLength: number): string
+- strがnull, undefiend -> コンパイル時に検出
+- strが空文字列
+  - maxLength < 0 -> 例外がスローされる
+  - maxLength = 0 -> 空文字列が返る
+  - maxLength > 0 -> 空文字列が返る
+- strが1文字
+- strが2文字以上
+
+- maxLength < 0 -> 
+- maxLength = 0 -> 
+- maxLength > 0 -> 
+
 # Test時に考慮すべき値
 
 - null, undefiend
