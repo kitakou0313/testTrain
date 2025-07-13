@@ -127,5 +127,33 @@ describe('StringUtils', () => {
     it('strが空文字列', () => {
       expect(StringUtils.countWords('')).toBe(0)
     })
+
+    describe('strが長さ1以上', () => {
+      it('strが空白を含まない', () => {
+        expect(StringUtils.countWords('abc')).toBe(1)
+      });
+      describe('strが空白を含む', () => {
+        describe('空白が1つ', () => {
+          it('空白が全角', () => {
+            expect(StringUtils.countWords('abc　def')).toBe(2)
+          })
+          it('空白が半角', () => {
+             expect(StringUtils.countWords('abc def')).toBe(2)
+          })
+        })
+        describe('空白が2つ以上連続', () => {
+          it('空白が全角', () => {
+            expect(StringUtils.countWords('abc　　def')).toBe(2)
+          })
+          it('空白が半角', () => {
+            expect(StringUtils.countWords('abc  def')).toBe(2)
+          })
+          it('空白が全角と半角', () => {
+            expect(StringUtils.countWords('abc　 def')).toBe(2)
+            expect(StringUtils.countWords('abc 　def')).toBe(2)
+          })
+        })
+      })
+    })
   })
 })
