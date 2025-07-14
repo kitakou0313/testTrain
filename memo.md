@@ -139,7 +139,14 @@
   - maxLength = 0 -> 空文字列が返る
   - maxLength > 0 -> 空文字列が返る
 - strが1文字
+  - maxLength < 0 -> 例外がスローされる
+  - maxLength = 0 -> ...が返る
+  - maxLength >= 1 -> そのままの文字列が返る
 - strが2文字以上
+  - maxLength < 0 -> 例外がスローされる
+  - maxLength = 0 -> ...が返る
+  - maxLength > 0 かつ maxLength < strの文字数 -> ...が返る
+  - maxLength >= strの文字数 -> そのままの文字列が返る
 
 - maxLength < 0 -> 
 - maxLength = 0 -> 

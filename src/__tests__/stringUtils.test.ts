@@ -177,5 +177,37 @@ describe('StringUtils', () => {
         expect(StringUtils.truncate('', 1)).toBe('')
       })
     })
+    describe('strが長さ1', () => {
+      it('maxLengthが < 0', () => {
+        expect(() => {
+          StringUtils.truncate('a', -1)
+        }).toThrow('Maximum length cannot be negative')
+      });
+      it('maxLengthが = 0', () => {
+        expect(StringUtils.truncate('a', 0)).toBe('...')
+      });
+      it('maxLengthが >= 1', () => {
+        expect(StringUtils.truncate('a', 1)).toBe('a')
+        expect(StringUtils.truncate('a', 2)).toBe('a')
+      })
+    })
+    describe('strが長さ2以上', () => {
+      it('maxLengthが < 0', () => {
+        expect(() => {
+          StringUtils.truncate('abc', -1)
+        }).toThrow('Maximum length cannot be negative')
+      });
+      it('maxLengthが = 0', () => {
+        expect(StringUtils.truncate('abc', 0)).toBe('...')
+      });
+      it('maxLengthが > 0 かつ < strの文字数', () => {
+        expect(StringUtils.truncate('abc', 1)).toBe('a...')
+        expect(StringUtils.truncate('abc', 2)).toBe('ab...')
+      });
+      it('maxLengthが >= strの文字数', () => {
+        expect(StringUtils.truncate('abc', 3)).toBe('abc')
+        expect(StringUtils.truncate('abc', 4)).toBe('abc')
+      });
+    })
   })
 })
