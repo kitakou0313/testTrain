@@ -231,6 +231,29 @@ describe('StringUtils', () => {
         expect(StringUtils.extractNumbers('a')).toStrictEqual([])
         expect(StringUtils.extractNumbers('@')).toStrictEqual([])
       })
+    });
+
+    describe('strが2文字以上', () => {
+      it('数字が含まれない', () => {
+        expect(StringUtils.extractNumbers('ab')).toStrictEqual([])
+        expect(StringUtils.extractNumbers('@#')).toStrictEqual([])
+      });
+      
+      describe('数字が含まれる', () => {
+        it('数字が1つ', () => {
+          expect(StringUtils.extractNumbers('a1b')).toStrictEqual([1])
+          expect(StringUtils.extractNumbers('1a2b')).toStrictEqual([1, 2])
+        });
+
+        describe('数字が複数', () => {
+          it('数字が連続している場合', () => {
+            expect(StringUtils.extractNumbers('11a')).toStrictEqual([11])
+          });
+          it('数字が連続していない場合', () => {
+            expect(StringUtils.extractNumbers('1a1')).toStrictEqual([1,1])
+          });
+        });
+      });
     })
   })
 })
