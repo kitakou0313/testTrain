@@ -209,5 +209,28 @@ describe('StringUtils', () => {
         expect(StringUtils.truncate('abc', 4)).toBe('abc')
       });
     })
+  });
+
+  describe('extractNumbers', () => {
+    // it('strがnull', () => {
+    //   expect(StringUtils.extractNumbers(null))
+    // })
+
+    // it('strがnull', () => {
+    //   expect(StringUtils.extractNumbers(undefined))
+    // })
+
+    it('strが空文字列', () => {
+      expect(StringUtils.extractNumbers('')).toStrictEqual([])
+    });
+    describe('strが1文字', () => {
+      it('数字', () => {
+        expect(StringUtils.extractNumbers('1')).toStrictEqual([1])
+      });
+      it('数字以外', () => {
+        expect(StringUtils.extractNumbers('a')).toStrictEqual([])
+        expect(StringUtils.extractNumbers('@')).toStrictEqual([])
+      })
+    })
   })
 })

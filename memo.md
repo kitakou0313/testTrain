@@ -152,6 +152,16 @@
 - maxLength = 0 -> 
 - maxLength > 0 -> 
 
+## extractNumbers(str: string): number[]
+- strがnull -> コンパイル時に検出
+- strがundefiend -> コンパイル時に検出
+- strが空文字列 -> []
+- strが1文字
+  - 数字 -> その数値が要素になった配列
+  - 数字以外 -> []
+- strが2文字以上
+
+
 # Test時に考慮すべき値
 
 - null, undefiend
@@ -172,3 +182,8 @@
       - 特殊文字
     - 空白
     - 全角、半角
+
+# ToDo
+- テストケースからの自動生成ツールを調べる
+- Symbol型の大小関係比較処理の実装について調べる
+- 状態により処理が変化するテストについて調べる
