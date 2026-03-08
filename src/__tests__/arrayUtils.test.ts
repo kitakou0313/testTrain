@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { ArrayUtils } from '../arrayUtils'
-import { a } from 'vitest/dist/chunks/suite.d.FvehnV49.js';
 
 describe('ArrayUtils', () => {
   describe('findMax', () => {
