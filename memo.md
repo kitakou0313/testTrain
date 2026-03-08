@@ -177,6 +177,24 @@
 1@a
 1@@
 
+# dateUtils テスト計画
+
+## formatDate(date: Date, format: string): string
+- dateで検証すべき値
+  - null
+    - 型チェックで不要になる
+  - nullでない
+    - 有効なdateの値
+    - 無効なdateの値
+- formatで検証すべき値
+  - null
+    - 型チェックで不要になる
+  - nullでない
+    - 空文字列
+    - 空文字列でない
+      - 有効なフォーマット文字列
+      - 無効なフォーマット文字列
+
 
 # Test時に考慮すべき値
 
